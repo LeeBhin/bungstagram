@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
+import styles from "./styles/layout.module.css";
 
 import Header from "./components/Header"
 
@@ -22,8 +23,12 @@ export default function RootLayout({
         <meta name="keywords" content={metadata.keywords as string} />
       </head>
       <body>
-        <Header />
-        {children}
+        <div className={styles.headerWrap}>
+          <Header />
+        </div>
+        <div className={styles.childrenWrap}>
+          {children}
+        </div>
       </body>
     </html>
   );
