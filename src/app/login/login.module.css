@@ -74,16 +74,21 @@
     color: white;
     font-weight: bold;
     font-size: 15px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgb(24, 119, 242);
 }
 
 .orLine {
     position: relative;
     height: 20px;
-    margin: 13px;
+    margin: 11px;
 }
 
 .or {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     position: absolute;
     left: 50%;
@@ -100,7 +105,7 @@
 
 .socialLogin {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin: 8px;
 }
 
@@ -110,8 +115,14 @@
 }
 
 .socialLogin div {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
+    display: flex;
+    gap: 5px;
+}
+
+.socialLogin div svg {
+    font-size: 20px;
 }
 
 .forgot {
@@ -136,6 +147,10 @@
     color: #0095f6;
 }
 
+.sign a:hover {
+    color: rgb(0, 55, 107);
+}
+
 .appCon {
     display: flex;
     gap: 18px;
@@ -144,6 +159,7 @@
     text-align: center;
     font-size: 14px;
     margin: 10px;
+    font-size: 13px;
 }
 
 .appWrap {
@@ -178,10 +194,19 @@
 
 .footer ul {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     list-style-type: none;
     font-size: 12px;
     gap: 10px;
+}
+
+.footer ul li {
+    cursor: pointer;
+}
+
+.footer ul li:hover {
+    text-decoration: underline;
 }
 
 .footer * {

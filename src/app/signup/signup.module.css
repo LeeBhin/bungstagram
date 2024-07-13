@@ -1,0 +1,66 @@
+#signLoginCon {
+    height: 555px;
+}
+
+.sentence {
+    font-weight: bold;
+    font-size: 16px;
+    width: 270px;
+    text-align: center;
+    color: #707070;
+    margin: 0 0 10px;
+}
+
+#signLogo {
+    margin: 40px 0 20px 0;
+}
+
+#signSocialLogin {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+#signSocial {
+    background-color: #0092f6;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    width: 270px;
+    border-radius: 8px;
+    gap: 5px;
+    font-size: 13px;
+}
+
+.socialIcon {
+    display: flex;
+}
+
+.socialIcon * {
+    color: white;
+}
+
+#orLine {
+    margin-bottom: 8px;
+}
+
+.policy {
+    font-size: 12px;
+    width: 270px;
+    text-align: center;
+    margin: 13px;
+    color: rgb(115, 115, 115);
+}
+
+.policy a {
+    color: #214faa;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#submit {
+    margin: 5px;
+}
