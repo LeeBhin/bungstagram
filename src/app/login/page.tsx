@@ -2,9 +2,8 @@ import Link from 'next/link';
 
 import css from "./login.module.css"
 
-import { FcGoogle } from "react-icons/fc";
-import { AiFillGithub } from "react-icons/ai";
 import LoginFooter from '../components/LoginFooter';
+import SocialLoginButton from '../components/SocialLoginButton';
 
 export default function Login() {
     return (
@@ -34,10 +33,12 @@ export default function Login() {
                                 <div className={css.line} />
                             </div>
 
-                            <div className={css.socialLogin}>
+                            <SocialLoginButton page="login" />
+
+                            {/* <div className={css.socialLogin}>
                                 <div className={css.google}><FcGoogle /> Google로 로그인</div>
                                 <div className={css.github}><AiFillGithub /> Github로 로그인</div>
-                            </div>
+                            </div> */}
 
                             <div className={css.forgot}>비밀번호를 잊으셨나요?</div>
 

@@ -3,9 +3,8 @@ import Link from 'next/link';
 import loginSt from "../login/login.module.css"
 import signSt from "./signup.module.css"
 
-import { FaGoogle } from "react-icons/fa";
-import { AiFillGithub } from "react-icons/ai";
 import LoginFooter from '../components/LoginFooter';
+import SocialLoginButton from '../components/SocialLoginButton';
 
 export default function SignUp() {
   return (
@@ -23,10 +22,12 @@ export default function SignUp() {
 
               <p className={signSt.sentence}>세명컴고 세붕이들의 작품을 보려면 가입하세요.</p>
 
-              <div className={loginSt.socialLogin} id={signSt.signSocialLogin}>
+              <SocialLoginButton page="signup" />
+
+              {/* <div className={loginSt.socialLogin} id={signSt.signSocialLogin}>
                 <div className={loginSt.google} id={signSt.signSocial}><span className={signSt.socialIcon}><FaGoogle /></span> Google로 로그인</div>
                 <div className={loginSt.github} id={signSt.signSocial}><span className={signSt.socialIcon}><AiFillGithub /></span> Github로 로그인</div>
-              </div>
+              </div> */}
 
               <div className={loginSt.orLine} id={signSt.orLine}>
                 <div className={loginSt.or}>또는</div>
