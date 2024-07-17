@@ -3,6 +3,7 @@ import "./styles/globals.css";
 import styles from "./styles/layout.module.css";
 
 import Header from "./components/Header"
+import AuthProvider from "./components/AuthProvider";
 
 export const metadata: Metadata = {
   title: '붕스타그램',
@@ -23,13 +24,15 @@ export default function RootLayout({
         <meta name="keywords" content={metadata.keywords as string} />
       </head>
       <body>
-        <div className={styles.headerWrap}>
-          <Header />
-        </div>
-        <div className={styles.childrenWrap}>
-          {children}
-        </div>
+        <AuthProvider>
+          <div className={styles.headerWrap}>
+            <Header />
+          </div>
+          <div className={styles.childrenWrap}>
+            {children}
+          </div>
+        </AuthProvider>
       </body>
-    </html>
+    </html >
   );
 }

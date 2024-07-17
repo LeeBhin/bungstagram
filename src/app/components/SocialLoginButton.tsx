@@ -7,13 +7,40 @@ import { FcGoogle } from 'react-icons/fc';
 import css from "../login/login.module.css";
 import signSt from "../signup/signup.module.css";
 
-import { signInWithGoogle, signInWithGithub } from '../../../firebase/fireauth';
+import { app } from "../../../firebase/firebase";
+import { useRouter } from 'next/navigation';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 
 type ButtonType = {
     page: 'login' | 'signup';
 };
 
 const SocialLoginButton: React.FC<ButtonType> = ({ page }) => {
+
+    const auth = getAuth(app);
+    const router = useRouter();
+
+    const signInWithGoogle = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            const result = await signInWithPopup(auth, provider);
+            router.push('/');
+        } catch (error) {
+            console.error(error);
+            alert(error);
+        }
+    };
+
+    const signInWithGithub = async () => {
+        const provider = new GithubAuthProvider();
+        try {
+            const result = await signInWithPopup(auth, provider);
+            router.push('/');
+        } catch (error) {
+            alert(error);
+        }
+    };
+
     const handleLogin = (provider: 'google' | 'github') => {
         if (provider === 'google') {
             signInWithGoogle();
