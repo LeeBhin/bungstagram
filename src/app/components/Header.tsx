@@ -31,6 +31,7 @@ export default function Header() {
         if (confirm("정말로 로그아웃하시겠습니까?")) {
             try {
                 await signOut(auth);
+                alert("로그아웃 되었습니다.")
             } catch (error) {
                 alert(`로그아웃 실패. ${error}`);
                 console.error("로그아웃 실패: ", error);
