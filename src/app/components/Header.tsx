@@ -12,13 +12,12 @@ import styles from "../styles/header.module.css";
 import { auth } from '../../../firebase/firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useEffect, useState } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
     const [isUser, setIsUser] = useState<boolean | null>(null);
 
     const pathname = usePathname();
-    const searchParams = useSearchParams();
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -26,7 +25,7 @@ export default function Header() {
         });
 
         return () => unsubscribe();
-    }, [pathname, searchParams]);
+    }, [pathname]);
 
     const handleLogout = async () => {
         if (confirm("정말로 로그아웃하시겠습니까?")) {

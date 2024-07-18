@@ -1,14 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { auth } from '../../../firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -19,7 +18,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     });
 
     return () => unsubscribe();
-  }, [router, pathname, searchParams]);
+  }, [router, pathname]);
 
   return <>{children}</>;
 };
